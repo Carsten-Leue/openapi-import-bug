@@ -1,0 +1,9 @@
+{
+  "name": "zACI-API",
+  "in": "header",
+  "required": true,
+  "schema": {
+    "type": "string",
+    "default": "com.ibm.zaci.system/1.0"
+  }
+}
