@@ -1,0 +1,37 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "version": "0.0.0",
+    "title": "Test"
+  },
+  "externalDocs": {
+    "description": "See the documentation on Github Pages",
+    "url": "https://pages.github.ibm.com/zaas/scaas/"
+  },
+  "servers": [
+    {
+      "url": "https://example.com"
+    }
+  ],
+  "paths": {
+    "/containers/{container_id_or_name}": {
+      "$ref": "./containers-by_id_or_name/paths.json"
+    },
+    "/containers1/{container_id_or_name}": {
+      "$ref": "./containers-by_id_or_name/sub/paths.json"
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}

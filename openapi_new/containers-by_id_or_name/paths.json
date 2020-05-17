@@ -1,0 +1,50 @@
+{
+  "put": {
+    "summary": "Update a container",
+    "operationId": "update_container",
+    "parameters": [
+      {
+        "$ref": "../components/parameters/zaciapi_header.json"
+      },
+      {
+        "name": "container_id_or_name",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "MyContainer"
+      },
+      {
+        "name": "force",
+        "in": "query",
+        "schema": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../containers/components/schemas/UpdateContainerRequest.json"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../containers/components/schemas/ContainerResponse.json"
+            }
+          }
+        }
+      }
+    }
+  }
+}
